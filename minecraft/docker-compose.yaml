@@ -14,12 +14,11 @@ services:
       ONLINE_MODE: "FALSE"
       FORCE_GAMEMODE: "true"
       MODE: "survival"
-      MOTD: "Survival Minecraft Server"
     restart: unless-stopped
     networks:
       - mc
 
-  mcb-bungee:
+  proxy:
     container_name: minecraft-proxy
     image: itzg/bungeecord
     ports:
