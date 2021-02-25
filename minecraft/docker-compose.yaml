@@ -10,5 +10,4 @@ services:
     restart: unless-stopped
   creative:
     build: .
-    volumes:
     restart: unless-stopped
