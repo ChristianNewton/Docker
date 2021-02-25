@@ -7,4 +7,7 @@ services:
       - type: bind
         source: /home/newtonadmin/minecraft
         target: /data
+    environment:
+      - EULA=TRUE
+      - TYPE=TUINITY
     restart: unless-stopped
