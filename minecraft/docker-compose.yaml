@@ -8,6 +8,3 @@ services:
         source: /home/newtonadmin/minecraft
         target: /data
     restart: unless-stopped
-  creative:
-    build: .
-    restart: unless-stopped
