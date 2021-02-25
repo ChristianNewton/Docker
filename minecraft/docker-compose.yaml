@@ -5,6 +5,6 @@ services:
       - "25566:25566"
     volumes:
       - type: bind
-        source: /home/newtonadmin/minecraft 
+        source: /home/newtonadmin/minecraft
         target: /data
     restart: unless-stopped
