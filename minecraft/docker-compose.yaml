@@ -18,6 +18,19 @@ services:
     networks:
       - mc
 
+  mcb-bungee:
+    container_name: mcb-bungee
+    image: itzg/bungeecord
+    ports:
+      - "25565:25565"
+    volumes:
+      - "/home/newtonadmin/waterfall/:/config"
+    restart: unless-stopped
+    environment:
+      TYPE: "WATERFALL"
+    networks:
+      - mc
+
 
 # Allows Internal Communication Between Minecraft Containers
 networks:
