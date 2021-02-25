@@ -1,0 +1,10 @@
+services:
+  survival:
+    image: christianmnewton/minecraft
+    ports:
+      - "25566:25566"
+    volumes:
+      - type: bind
+        source: /home/newtonadmin/minecraft 
+        target: /data
+    restart: unless-stopped
