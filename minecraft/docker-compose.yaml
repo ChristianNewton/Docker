@@ -1,5 +1,6 @@
 services:
   survival:
+    container: minecraft-survival
     image: itzg/minecraft-server
     expose:
       - "25565"
@@ -19,7 +20,7 @@ services:
       - mc
 
   mcb-bungee:
-    container_name: mcb-bungee
+    container_name: minecraft-proxy
     image: itzg/bungeecord
     ports:
       - "25565:25565"
