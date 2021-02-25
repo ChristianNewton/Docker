@@ -1,6 +1,6 @@
 services:
   survival:
-    build: .
+    image: itzg/minecraft-server
     ports:
       - "25566:25566"
     volumes:
