@@ -1,6 +1,6 @@
 services:
   survival:
-    image: christianmnewton/minecraft
+    build: .
     ports:
       - "25566:25566"
     volumes:
