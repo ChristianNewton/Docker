@@ -1,6 +1,6 @@
 services:
   survival:
-    container: minecraft-survival
+    container_name: minecraft-survival
     image: itzg/minecraft-server
     expose:
       - "25565"
