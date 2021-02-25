@@ -11,7 +11,7 @@ services:
     environment:
       EULA: "TRUE"
       TYPE: "TUINITY"
-      ONLINE_MODE: "false"
+      ONLINE_MODE: "FALSE"
       FORCE_GAMEMODE: "true"
       MODE: "survival"
       MOTD: "Survival Minecraft Server"
