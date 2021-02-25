@@ -1,13 +1,25 @@
 services:
   survival:
     image: itzg/minecraft-server
-    ports:
-      - "25566:25566"
+    expose:
+      - "25565"
     volumes:
       - type: bind
         source: /home/newtonadmin/minecraft
         target: /data
     environment:
-      - EULA=TRUE
-      - TYPE=TUINITY
+      EULA: "TRUE"
+      TYPE: "TUINITY"
+      ONLINE_MODE: "false"
+      FORCE_GAMEMODE: "true"
+      MODE: "survival"
+      MOTD: "Survival Minecraft Server"
     restart: unless-stopped
+    networks:
+      - mc
+
+
+# Allows Internal Communication Between Minecraft Containers
+networks:
+  mc:
+    driver: bridge
