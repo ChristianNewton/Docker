@@ -10,7 +10,7 @@ services:
         target: /data
     environment:
       EULA: "TRUE"
-      TYPE: "TUINITY"
+      TYPE: "PAPER"
       ONLINE_MODE: "FALSE"
       FORCE_GAMEMODE: "true"
       MODE: "survival"
@@ -30,7 +30,7 @@ services:
         target: /data
     environment:
       EULA: "TRUE"
-      TYPE: "TUINITY"
+      TYPE: "PAPER"
       ONLINE_MODE: "FALSE"
       MAX_MEMORY: "1G"
     restart: unless-stopped
@@ -48,7 +48,7 @@ services:
         target: /data
     environment:
       EULA: "TRUE"
-      TYPE: "TUINITY"
+      TYPE: "PAPER"
       ONLINE_MODE: "FALSE"
       MAX_MEMORY: "1G"
     restart: unless-stopped
@@ -66,7 +66,7 @@ services:
         target: /data
     environment:
       EULA: "TRUE"
-      TYPE: "TUINITY"
+      TYPE: "PAPER"
       ONLINE_MODE: "FALSE"
       MAX_MEMORY: "1G"
     restart: unless-stopped
