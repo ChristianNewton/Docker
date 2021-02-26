@@ -63,7 +63,8 @@ services:
         target: /data
     environment:
       EULA: "TRUE"
-      TYPE: "TUINITY"
+      TYPE: "PAPER"
+      VERSION: "1.8.9"
       ONLINE_MODE: "FALSE"
     restart: unless-stopped
     networks:
