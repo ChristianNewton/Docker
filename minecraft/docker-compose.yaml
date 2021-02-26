@@ -52,22 +52,7 @@ services:
     networks:
       - mc
 
-  bedwars:
-    container_name: minecraft-bedwars
-    image: itzg/minecraft-server
-    expose:
-      - "25565"
-    volumes:
-      - type: bind
-        source: /home/newtonadmin/minecraft_bedwars
-        target: /data
-    environment:
-      EULA: "TRUE"
-      TYPE: "TUINITY"
-      ONLINE_MODE: "FALSE"
-    restart: unless-stopped
-    networks:
-      - mc
+
 
   proxy:
     container_name: minecraft-proxy
