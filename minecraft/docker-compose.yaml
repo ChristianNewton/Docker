@@ -63,8 +63,8 @@ services:
         target: /data
     environment:
       EULA: "TRUE"
-      TYPE: "SPIGOT"
-      VERSION: "1.8.8-R0.1-SNAPSHOT-LATEST"
+      TYPE: "PAPER"
+      VERSION: "1.9.4"
       ONLINE_MODE: "FALSE"
     restart: unless-stopped
     networks:
