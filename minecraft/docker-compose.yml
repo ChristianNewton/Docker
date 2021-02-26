@@ -15,7 +15,6 @@ services:
       FORCE_GAMEMODE: "true"
       MODE: "survival"
       MAX_MEMORY: "1G"
-      INIT_MEMORY: "4MB"
     restart: unless-stopped
     networks:
       - mc
@@ -34,7 +33,6 @@ services:
       TYPE: "TUINITY"
       ONLINE_MODE: "FALSE"
       MAX_MEMORY: "1G"
-      INIT_MEMORY: "4MB"
     restart: unless-stopped
     networks:
       - mc
@@ -53,7 +51,6 @@ services:
       TYPE: "TUINITY"
       ONLINE_MODE: "FALSE"
       MAX_MEMORY: "1G"
-      INIT_MEMORY: "4MB"
     restart: unless-stopped
     networks:
       - mc
@@ -72,7 +69,6 @@ services:
       TYPE: "TUINITY"
       ONLINE_MODE: "FALSE"
       MAX_MEMORY: "1G"
-      INIT_MEMORY: "4MB"
     restart: unless-stopped
     networks:
       - mc
