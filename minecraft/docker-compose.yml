@@ -18,21 +18,33 @@ services:
     restart: unless-stopped
     networks:
       - mc
+    deploy:
+        resources:
+          reservations:
+              cpus: 0.25
+              memory: 128M
+     
 
   proxy:
     container_name: minecraft-proxy
     image: itzg/bungeecord
     ports:
       - "25565:25577"
-      - "19132:19132"
     volumes:
       - "/home/newtonadmin/minecraft_proxy/:/config"
       - "/home/newtonadmin/minecraft_proxy/plugins:/plugins"
     restart: unless-stopped
     environment:
       TYPE: "WATERFALL"
+
     networks:
       - mc
+    deploy:
+        resources:
+          limits:
+              cpus: 0.50
+              memory: 218M
+
 
 
 # Allows Internal Communication Between Minecraft Containers
