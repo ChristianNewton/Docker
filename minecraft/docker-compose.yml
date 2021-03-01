@@ -4,6 +4,7 @@ services:
     image: itzg/minecraft-server
     expose:
       - "25565"
+      - "19132"
     volumes:
       - type: bind
         source: /home/newtonadmin/minecraft_survival
