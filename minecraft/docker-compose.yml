@@ -6,7 +6,7 @@ services:
       - "25565"
     volumes:
       - type: bind
-        source: /home/newtonadmin/minecraft
+        source: /home/newtonadmin/minecraft_survival
         target: /data
     environment:
       EULA: "TRUE"
