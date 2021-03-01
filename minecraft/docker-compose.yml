@@ -25,8 +25,8 @@ services:
     ports:
       - "25565:25565"
     volumes:
-      - "/home/newtonadmin/waterfall/:/config"
-      - "/home/newtonadmin/waterfall/plugins:/plugins"
+      - "/home/newtonadmin/minecraft_proxy/:/config"
+      - "/home/newtonadmin/minecraft_proxy/plugins:/plugins"
     restart: unless-stopped
     environment:
       TYPE: "WATERFALL"
