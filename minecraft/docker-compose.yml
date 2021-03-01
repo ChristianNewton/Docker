@@ -4,7 +4,6 @@ services:
     image: itzg/minecraft-server
     expose:
       - "25565"
-      - "19132"
     volumes:
       - type: bind
         source: /home/newtonadmin/minecraft_survival
@@ -24,7 +23,8 @@ services:
     container_name: minecraft-proxy
     image: itzg/bungeecord
     ports:
-      - "25565:25565"
+      - "25565:25577"
+      - "19132:19132"
     volumes:
       - "/home/newtonadmin/minecraft_proxy/:/config"
       - "/home/newtonadmin/minecraft_proxy/plugins:/plugins"
