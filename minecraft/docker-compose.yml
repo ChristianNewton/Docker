@@ -25,7 +25,7 @@ services:
               memory: 128M
   events:
     container_name: minecraft-events
-    image: itzg/minecraft-server
+    image: lela810/mcmyadmin2-dynmap
     expose:
       - "25565"
     ports:
