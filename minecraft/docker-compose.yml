@@ -25,16 +25,18 @@ services:
               memory: 128M
   events:
     container_name: minecraft-events
-    image: lela810/mcmyadmin2-dynmap
+    image: itzg/minecraft-server
     expose:
       - "25565"
-    ports:
-      - "8080:8080"
     volumes:
       - type: bind
-        source: /home/newtonadmin/minecraft_events2
-        target: /minecraft
+        source: /home/newtonadmin/minecraft_events
+        target: /data
     restart: unless-stopped
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      MAX_MEMORY: "1G"
     networks:
       - mc
     deploy:
