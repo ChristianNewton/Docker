@@ -1,4 +1,6 @@
 services:
+
+
   survival:
     container_name: minecraft-survival
     image: itzg/minecraft-server
@@ -6,17 +8,20 @@ services:
       - "25565"
     ports:
       - "8100:8100"
+      - "8123:8123"
     volumes:
       - type: bind
         source: /home/newtonadmin/minecraft_survival
         target: /data
     environment:
       EULA: "TRUE"
-      TYPE: "PAPER"
+      TYPE: "TUINITY"
       ONLINE_MODE: "FALSE"
       FORCE_GAMEMODE: "true"
       MODE: "survival"
       MAX_MEMORY: "1G"
+      TZ: "America/Phoenix"
+      ENABLE_AUTOPAUSE: "TRUE"
     restart: unless-stopped
     networks:
       - mc
@@ -26,19 +31,46 @@ services:
               cpus: 0.25
               memory: 128M
 
-     
+  events:
+    container_name: minecraft-events
+    image: itzg/minecraft-server
+    volumes:
+      - type: bind
+        source: /home/newtonadmin/minecraft_events
+        target: /data
+    expose:
+      - "25565"
+    environment:
+      EULA: "TRUE"
+      TYPE: "PAPER"
+      ONLINE_MODE: "FALSE"
+      MAX_MEMORY: "1G"
+      TZ: "America/Phoenix"
+      TYPE: "TUINITY"
+      ENABLE_AUTOPAUSE: "TRUE"
+    restart: unless-stopped
+    networks:
+      - mc
+    deploy:
+        resources:
+          reservations:
+              cpus: 0.25
+              memory: 128M
 
   proxy:
     container_name: minecraft-proxy
     image: itzg/bungeecord
     ports:
       - "25565:25577"
+      - "8804:8804"
+      - "19132:19132/udp"
     volumes:
       - "/home/newtonadmin/minecraft_proxy/:/config"
-      - "/home/newtonadmin/minecraft_proxy/plugins:/plugins"
+      - "/home/newtonadmin/minecraft_proxy/plugins:/server/plugins"
     restart: unless-stopped
     environment:
       TYPE: "WATERFALL"
+      TZ: "America/Phoenix"
 
     networks:
       - mc
