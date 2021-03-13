@@ -1,0 +1,24 @@
+  events:
+    container_name: minecraft-events
+    image: itzg/minecraft-server
+    volumes:
+      - type: bind
+        source: /home/newtonadmin/minecraft_events
+        target: /data
+    expose:
+      - "25565"
+    environment:
+      EULA: "TRUE"
+      ONLINE_MODE: "FALSE"
+      MAX_MEMORY: "1G"
+      TZ: "America/Phoenix"
+      TYPE: "TUINITY"
+      ENABLE_AUTOPAUSE: "TRUE"
+    restart: unless-stopped
+    networks:
+      - mc
+    deploy:
+        resources:
+          reservations:
+              cpus: 0.25
+              memory: 128M
