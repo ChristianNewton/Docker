@@ -56,6 +56,31 @@ services:
               cpus: 0.25
               memory: 128M
 
+  forge:
+    container_name: minecraft-forge
+    image: itzg/minecraft-server
+    volumes:
+      - type: bind
+        source: /home/newtonadmin/minecraft_forge
+        target: /data
+    expose:
+      - "25565"
+    environment:
+      EULA: "TRUE"
+      ONLINE_MODE: "FALSE"
+      MAX_MEMORY: "1G"
+      TZ: "America/Phoenix"
+      TYPE: "FORGE"
+      ENABLE_AUTOPAUSE: "TRUE"
+    restart: unless-stopped
+    networks:
+      - mc
+    deploy:
+        resources:
+          reservations:
+              cpus: 0.25
+              memory: 128M
+
   proxy:
     container_name: minecraft-proxy
     image: itzg/bungeecord
