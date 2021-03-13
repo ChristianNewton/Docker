@@ -35,7 +35,7 @@ services:
 
   forge:
     container_name: minecraft-forge
-    image: itzg/minecraft-server
+    image: itzg/minecraft-server:java8
     volumes:
       - type: bind
         source: /home/newtonadmin/minecraft_forge
@@ -49,6 +49,7 @@ services:
       TZ: "America/Phoenix"
       TYPE: "FORGE"
       ENABLE_AUTOPAUSE: "TRUE"
+      VERSION: "1.12.2"
     restart: unless-stopped
     networks:
       - mc
