@@ -33,31 +33,7 @@ services:
 
 
 
-  forge:
-    container_name: minecraft-forge
-    image: itzg/minecraft-server:java8
-    volumes:
-      - type: bind
-        source: /home/newtonadmin/minecraft_forge
-        target: /data
-    expose:
-      - "25565"
-    environment:
-      EULA: "TRUE"
-      ONLINE_MODE: "FALSE"
-      MAX_MEMORY: "1G"
-      TZ: "America/Phoenix"
-      TYPE: "FORGE"
-      ENABLE_AUTOPAUSE: "TRUE"
-      VERSION: "1.12.2"
-    restart: unless-stopped
-    networks:
-      - mc
-    deploy:
-        resources:
-          reservations:
-              cpus: 0.25
-              memory: 128M
+
 
   proxy:
     container_name: minecraft-proxy
@@ -67,8 +43,6 @@ services:
       - "8804:8804"
       - "19132:19132/udp"
     volumes:
-      - "/home/newtonadmin/minecraft_proxy/:/config"
-      - "/home/newtonadmin/minecraft_proxy/plugins:/server/plugins"
       - "/home/newtonadmin/minecraft_proxy/:/server"
     restart: unless-stopped
     environment:
@@ -81,7 +55,7 @@ services:
         resources:
           limits:
               cpus: 0.50
-              memory: 218M
+              memory: 512M
 
 
 
